@@ -1,7 +1,8 @@
 package exec;
 
 import java.util.*;
-import digimons.Digimon;
+import digimons.*;
+import funciones.*;
 
 public class main {
 
@@ -18,23 +19,25 @@ public class main {
 			switch(opcion) {
 				case 1:
 					
-					String name;
-					int lvl;
-					int attack_points;
-					int health;
-					int attack_times;
 					Digimon digimon = new Digimon("", 0, 0, 0, 0);
 					
-					System.out.println("Introduce el nombre del Digimon");
-					digimon.setName(name = sc.next());
-					System.out.println("Introduce el nombre del Digimon");
-					digimon.setLvl(lvl = sc.nextInt());
-					System.out.println("Introduce el nombre del Digimon");
-					digimon.setAttack_points(attack_points = sc.nextInt());
-					System.out.println("Introduce el nombre del Digimon");
-					digimon.setHealth(health = sc.nextInt());
-					System.out.println("Introduce el nombre del Digimon");
-					digimon.setAttack_times(attack_times = sc.nextInt());
+					digimon.setName(generate_digimon_name.generar_nombre(random_num.generarNumeroAleatorio(1, 3)));
+					
+					digimon.setLvl(random_num.generarNumeroAleatorio(1, 5));
+					
+					digimon.setAttack_points(digimon.getLvl()*5);
+					
+					digimon.setHealth(digimon.getLvl()*10);
+
+					digimon.setAttack_times(10);
+					
+					System.out.println("Se ha creado tu Digimon");
+					System.out.println("Es de tipo: " + digimon.getName());
+					System.out.println("Su nivel es: " + digimon.getLvl());
+					System.out.println("Su nivel de ataque es: " + digimon.getAttack_points());
+					System.out.println("Sus puntos de vida son: " + digimon.getHealth());
+					System.out.println("Sus veces de ataque son: " + digimon.getAttack_times());
+					
 				break;
 				case 2:
 					System.out.println("Has salido del programa");
