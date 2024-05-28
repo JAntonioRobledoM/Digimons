@@ -57,8 +57,14 @@ public class Domador {
 	
 	public static int pelea() {
 		Scanner sc = new Scanner(System.in);
-		int eleccion = 0;
-		System.out.println("Elige una opción\n1. Ataque 1\n2. Ataque 2\n3. Capturar Digimon");
-		return eleccion;
+	    int eleccion = 0;
+	    System.out.println("Elige una opción\n1. Ataque 1\n2. Ataque 2\n3. Capturar Digimon");
+	    if (sc.hasNextInt()) {  // Verifica si el siguiente token es un entero
+	        eleccion = sc.nextInt();  // Lee el entero de la entrada del usuario
+	    } else {
+	        System.out.println("Entrada no válida. Por favor, introduce un número.");
+	        sc.next();  // Consume la entrada no válida
+	    }
+	    return eleccion;
 	}
 }
