@@ -1,10 +1,9 @@
 package digimons;
 
-import java.util.List;
-import java.util.Scanner;
+import funciones.generate_digimon_name;
+import funciones.random_num;
 
-public class Digimon {
-	
+public class batallaDigital {
 	private String name;
 	private int lvl;
 	private int attack_points;
@@ -13,7 +12,7 @@ public class Digimon {
 	private int DP1;
 	private int DP2;
 	
-	public Digimon(String name, int lvl, int attack_points, int health, int attack_times, int DP1, int DP2) {
+	public batallaDigital(String name, int lvl, int attack_points, int health, int attack_times, int DP1, int DP2) {
 		this.name = name;
 		this.lvl = lvl;
 		this.attack_points = attack_points;
@@ -23,17 +22,24 @@ public class Digimon {
 		this.DP2 = DP2;
 	}
 	
-	public static int elige(List<Digimon> digimonList) {
-		Scanner sc = new Scanner(System.in);
-		int eleccion = 0;
-		int cont = 1;
-		System.out.println("¿Qué Digimon quieres usar?");
-		for (Digimon digimon : digimonList) {
-			System.out.println(cont + ". " + digimon);
-			cont++;
-		}
-		eleccion = sc.nextInt();
-		return eleccion;
+	public void generarEnemigo() {
+		
+		batallaDigital enemigo = new batallaDigital("", 0, 0, 0, 0, 0, 0);
+		
+		enemigo.setName(generate_digimon_name.generar_nombre(random_num.generarNumeroAleatorio(1, 3)));
+		
+		enemigo.setLvl(random_num.generarNumeroAleatorio(1, 5));
+		
+		enemigo.setAttack_points(enemigo.getLvl()*5);
+		
+		enemigo.setHealth(enemigo.getLvl()*10);
+
+		enemigo.setAttack_times(10);
+		
+		enemigo.setDP1(enemigo.getAttack_points());
+		
+		enemigo.setDP2(enemigo.getAttack_points()*2);
+		
 	}
 
 	public String getName() {
