@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"digimons","l":"attack"},{"p":"digimons","l":"batallaDigital"},{"p":"digimons","l":"Digimon"},{"p":"digimons","l":"Domador"},{"p":"funciones","l":"generate_digimon_name"},{"p":"exec","l":"main"},{"p":"funciones","l":"random_num"}];updateSearchResults();
